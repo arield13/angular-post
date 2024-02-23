@@ -1,0 +1,67 @@
+.table-container {
+  border: 1px solid #000;
+  display: inline-block;
+}
+
+.posts-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.posts-table th,
+.posts-table td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+
+
+/* Add styles for error message */
+.error-message {
+  background-color: #f44336;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Add styles for "no data found" message */
+.no-data-message, .posts-title {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style for input fields */
+input[type="text"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Style for form labels */
+label {
+  margin-right: 10px;
+}
+
+/* Style for submit button */
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style for submit button on hover */
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+

@@ -1,0 +1,61 @@
+<form [formGroup]="searchForm" (ngSubmit)="searchPostsByTag()">
+  <div>
+    <input type="text" formControlName="tag" placeholder="Enter tag">
+  </div>
+  <div>
+    <label>
+      <input type="radio" formControlName="direction" value="asc"> Ascending
+    </label>
+    <label>
+      <input type="radio" formControlName="direction" value="desc"> Descending
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" formControlName="sortBy" value="id"> Sort by ID
+    </label>
+    <label>
+      <input type="radio" formControlName="sortBy" value="reads"> Sort by Reads
+    </label>
+    <label>
+      <input type="radio" formControlName="sortBy" value="likes"> Sort by Likes
+    </label>
+    <label>
+      <input type="radio" formControlName="sortBy" value="popularity"> Sort by Popularity
+    </label>
+  </div>
+  <button type="submit">Search</button>
+</form>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="posts.length === 0 && !errorMessage" class="no-data-message">
+  No data found.
+</div>
+
+<div *ngIf="posts.length" class="table-container" >
+  <table class="posts-table">
+    <thead class="posts-title">
+      <tr>
+        <th>Id</th>
+        <th>Author</th>
+        <th>Likes</th>
+        <th>Popularity</th>
+        <th>Reads</th>
+        <th>Tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.author }}</td>
+        <td>{{ post.likes }}</td>
+        <td>{{ post.popularity }}</td>
+        <td>{{ post.reads }}</td>
+        <td>{{ post.tags.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
